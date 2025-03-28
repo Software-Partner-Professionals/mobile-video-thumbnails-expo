@@ -17,3 +17,20 @@ Image + ScrollView.
    ```bash
     yarn start
    ```
+
+## Example iOS
+### [Expo Image + FlashList] vs. [Expo Image + ScrollView] vs. [React Native Image + ScrollView]
+<div>
+   <img src="examples/ios_expo_image_flashlist.gif" style="height:auto; width:250px">
+   <img src="examples/ios_expo_image_scrollview.gif" style="height:auto; width:250px">
+   <img src="examples/ios_rn_image_scrollview.gif" style="height:auto; width:250px">
+</div>
+
+
+## Example Android
+### [Expo Image + FlashList] vs. [Expo Image + ScrollView] vs. [React Native Image + ScrollView]
+<div>
+   <img src="examples/android_expo_image_flashlist.gif" style="height:auto; width:250px">
+   <img src="examples/android_expo_image_scrollview.gif" style="height:auto; width:250px">
+   <img src="examples/android_rn_image_scrollview.gif" style="height:auto; width:250px">
+</div>
