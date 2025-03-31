@@ -18,7 +18,7 @@ Image + ScrollView.
     yarn start
    ```
 
-## Example iOS
+## Example iOS (iPhone 13)
 ### [Expo Image + FlashList] vs. [Expo Image + ScrollView] vs. [React Native Image + ScrollView]
 <div>
    <img src="examples/ios_expo_image_flashlist.gif" style="height:auto; width:250px">
@@ -27,7 +27,7 @@ Image + ScrollView.
 </div>
 
 
-## Example Android
+## Example Android (POCO X6 PRO)
 ### [Expo Image + FlashList] vs. [Expo Image + ScrollView] vs. [React Native Image + ScrollView]
 <div>
    <img src="examples/android_expo_image_flashlist.gif" style="height:auto; width:250px">
