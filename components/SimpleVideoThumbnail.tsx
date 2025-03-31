@@ -1,23 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
-import * as VideoThumbnails from 'expo-video-thumbnails'
+import { generateThumbnail } from '@/utils/generateThumbnail'
 
 export const SimpleVideoThumbnail = ({ url, name }: { url: string; name: string }) => {
   const [image, setImage] = useState<string>()
 
-  const generateThumbnail = async () => {
-    try {
-      const { uri } = await VideoThumbnails.getThumbnailAsync(url, {
-        time: 15000,
-      })
-      setImage(uri)
-    } catch (e) {
-      console.warn(e)
-    }
-  }
-
   useEffect(() => {
-    void generateThumbnail()
+    generateThumbnail(url, setImage)
   }, [url])
 
   return (

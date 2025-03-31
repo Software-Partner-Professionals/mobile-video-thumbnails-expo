@@ -1,26 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Dimensions, Platform, StyleSheet, Text, View } from 'react-native'
 import { Image } from 'expo-image'
-import * as VideoThumbnails from 'expo-video-thumbnails'
+import { generateThumbnail } from '@/utils/generateThumbnail'
 
 const blurhash = 'L6D0ih}m00oe00pI%#xZ4U4m9Z%M'
 
 export const ExpoImageVideoThumbnail = ({ url, name }: { url: string; name: string }) => {
   const [image, setImage] = useState<string>()
 
-  const generateThumbnail = async () => {
-    try {
-      const { uri } = await VideoThumbnails.getThumbnailAsync(url, {
-        time: 15000,
-      })
-      setImage(uri)
-    } catch (e) {
-      console.warn(e)
-    }
-  }
-
   useEffect(() => {
-    void generateThumbnail()
+    generateThumbnail(url, setImage)
   }, [url])
 
   return (
@@ -29,7 +18,7 @@ export const ExpoImageVideoThumbnail = ({ url, name }: { url: string; name: stri
         source={{
           uri: image,
         }}
-        transition={2000}
+        transition={500}
         placeholder={Platform.OS === 'ios' ? { blurhash } : null}
         placeholderContentFit='cover'
         style={styles.image}

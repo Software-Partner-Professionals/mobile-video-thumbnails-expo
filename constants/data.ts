@@ -1,10 +1,15 @@
-export const videosFHD = [
+export type ListItem = {
+  url: string
+  name: string
+}
+
+export const shortVideosList: Array<ListItem> = [
   {
     url: 'https://videos.pexels.com/video-files/3327058/3327058-hd_1920_1080_24fps.mp4',
     name: 'Beach',
   },
   {
-    url: 'https://videos.pexels.com/video-files/3327752/3327752-hd_1920_1080_24fps.mp4',
+    url: 'https://videos.pexels.com/video-files/3327752/3327752-hd_1280_720_24fps.mp4',
     name: 'Yoga',
   },
   {
@@ -67,4 +72,21 @@ export const videosFHD = [
     url: 'https://videos.pexels.com/video-files/4877877/4877877-uhd_2732_1440_25fps.mp4',
     name: 'Drink',
   },
+  {
+    url: 'https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4',
+    name: 'People',
+  },
+  {
+    url: 'https://videos.pexels.com/video-files/2795172/2795172-uhd_2560_1440_25fps.mp4',
+    name: 'Just talking',
+  },
+  {
+    url: 'https://videos.pexels.com/video-files/2795168/2795168-uhd_1440_2560_25fps.mp4',
+    name: 'Restaurant',
+  },
 ]
+
+export const longVideosList = Array.from({ length: 2 }).reduce(
+  (acc) => [...(acc as Array<ListItem>), ...shortVideosList],
+  [],
+) as Array<ListItem>

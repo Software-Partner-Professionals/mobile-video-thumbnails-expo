@@ -1,6 +1,6 @@
 import { Dimensions, Pressable, StyleSheet, Text } from 'react-native'
 
-import { videosFHD } from '@/constants/data'
+import { longVideosList } from '@/constants/data'
 import { ExpoImageVideoThumbnail } from '@/components/ExpoImageVideoThumbnail'
 import { useState } from 'react'
 import { FlashList } from '@shopify/flash-list'
@@ -11,8 +11,8 @@ const ExpoImageScreen = () => {
   return (
     <FlashList
       key={count}
-      data={videosFHD}
-      drawDistance={Dimensions.get('window').height / 2}
+      data={longVideosList}
+      drawDistance={Dimensions.get('window').height * 2}
       renderItem={({ item: { url, name } }) => (
         <Pressable onPress={() => setCount((prev) => prev + 1)} style={styles.container}>
           <ExpoImageVideoThumbnail key={url} url={url} name={name} />

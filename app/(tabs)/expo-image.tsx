@@ -1,5 +1,5 @@
 import { Pressable, ScrollView, StyleSheet, Text } from 'react-native'
-import { videosFHD } from '@/constants/data'
+import { longVideosList } from '@/constants/data'
 import { ExpoImageVideoThumbnail } from '@/components/ExpoImageVideoThumbnail'
 import { useState } from 'react'
 
@@ -10,8 +10,8 @@ const ExpoImageScreen = () => {
     <ScrollView key={count} style={styles.scrollView}>
       <Text style={styles.title}>Expo Image Based (tap to rerender)</Text>
       <Pressable onPress={() => setCount((prev) => prev + 1)} style={styles.container}>
-        {videosFHD.map(({ url, name }) => (
-          <ExpoImageVideoThumbnail key={url} url={url} name={name} />
+        {longVideosList.map(({ url, name }, idx) => (
+          <ExpoImageVideoThumbnail key={idx} url={url} name={name} />
         ))}
       </Pressable>
     </ScrollView>
