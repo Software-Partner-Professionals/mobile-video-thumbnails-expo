@@ -86,7 +86,7 @@ export const shortVideosList: Array<ListItem> = [
   },
 ]
 
-export const longVideosList = Array.from({ length: 2 }).reduce(
+export const longVideosList = Array.from({ length: 10 }).reduce(
   (acc) => [...(acc as Array<ListItem>), ...shortVideosList],
   [],
 ) as Array<ListItem>
