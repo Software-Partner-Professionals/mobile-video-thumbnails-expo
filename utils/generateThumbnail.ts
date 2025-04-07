@@ -1,16 +1,17 @@
 import * as VideoThumbnails from 'expo-video-thumbnails'
+import { Dispatch, SetStateAction } from 'react'
 
 export const generateThumbnail = async (
   url: string,
-  setImage: React.Dispatch<React.SetStateAction<string | undefined>>,
+  setImage: Dispatch<SetStateAction<string | undefined>>,
 ) => {
   try {
     const { uri } = await VideoThumbnails.getThumbnailAsync(url, {
-      time: 15000,
+      quality: 0.2,
+      time: 1000,
     })
     setImage(uri)
   } catch (e) {
-    void generateThumbnail(url, setImage)
-    console.warn(e)
+    setImage(undefined)
   }
 }
